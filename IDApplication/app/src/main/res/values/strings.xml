@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ID Application</string>
+    <string name="InputHint">Enter Your ID</string>
+    <string name="ButtonText">Show</string>
+    <string name="hint">showing</string>
+</resources>
