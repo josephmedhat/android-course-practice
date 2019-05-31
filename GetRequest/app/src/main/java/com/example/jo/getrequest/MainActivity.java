@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         get=findViewById(R.id.button);
         queue= Volley.newRequestQueue(MainActivity.this);
     }
+
     public void parse(View view) {
         String url = "https://jsonplaceholder.typicode.com/posts/1";
 
