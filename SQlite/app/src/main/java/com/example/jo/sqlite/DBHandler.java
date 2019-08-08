@@ -39,7 +39,6 @@ public class DBHandler extends SQLiteOpenHelper {
                 + KEY_STUDENT_ID + " INTEGER (10) PRIMARY KEY,"
                 + KEY_STUDENT_NAME + " TEXT, "
                 + KEY_STUDENT_EMAIL + " TEXT" + ")";
-
         //Create table query executed in sqlite
         db.execSQL(CREATE_STUDENTS_TABLE);
     }
@@ -69,9 +68,13 @@ public class DBHandler extends SQLiteOpenHelper {
 
         //You can browse to the query method to know more about the arguments.
         Cursor cursor = db.query(TABLE_STUDENTS,
+
                 new String[] { KEY_STUDENT_ID, KEY_STUDENT_NAME, KEY_STUDENT_EMAIL },
+
                 KEY_STUDENT_ID + "=?",
-                new String[] { String.valueOf(studentID) },
+
+                new String[] { String.valueOf(studentID)
+                },
                 null,
                 null,
                 null,

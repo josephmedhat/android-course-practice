@@ -19,7 +19,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String id = "task_id";
     private static final String title = "title";
     private static final String duration = "duration";
-
     //Here context passed will be of application and not activity.
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -40,7 +39,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + Table_name);
-
         // Create tables again
         onCreate(db);
     }

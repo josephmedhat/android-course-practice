@@ -3,21 +3,27 @@ package com.example.jo.sqlite;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     DBHandler db;
+    TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        tv=findViewById(R.id.tv_values);
         db = new DBHandler(this);
        /* StudentModel student=new StudentModel(55,"jo","nadeen@gmail.com");
         db.addStudent(student);*/
-        StudentModel student1=new StudentModel(2,"nadine","nadeen@gmail.com");
-        db.deleteStudent(student1);
+        StudentModel student1=new StudentModel(2,"nadeen","nnnadeen@gmail.com");
+       // db.addStudent(student1);
+        db.updateStudent(student1);
+       StudentModel  student= db.getStudent(2);
+       tv.setText(student.getStudentName());
         //addDataToDatabase();
 
         Log.d("test","Running . . .");
